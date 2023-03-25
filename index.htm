@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Trailer Web Roblox</title>
+  </head>
+  <style>
+    *,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #trailer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .intro {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+    }
+    #btn {
+      margin-top: 20px;
+      border: none;
+      padding: 12px;
+      color: white;
+      background-color: black;
+      width: 200px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <video autoplay controls loop id="trailer">
+      <source src="game_trailer.mp4" type="video/mp4" />
+    </video>
+    <div class="intro">
+      <center>
+        <img src="roblox-logo.png" alt="" width="150" height="150" />
+        <p>
+          Roblox Adalah Game Terbaik Di Dunia Dan Membuat Anak-Anak Nyaman Dalam
+          Memainkannya.
+        </p>
+        <button id="btn" onclick="triggerBtn()">PAUSE</button>
+      </center>
+    </div>
+    <script>
+      const trailer = document.getElementById("trailer");
+      const btn = document.getElementById("btn");
+
+      function triggerBtn() {
+        if (trailer.paused) {
+          trailer.play();
+          btn.innerHTML = "PAUSE";
+        } else {
+          trailer.pause();
+          btn.innerHTML = "PLAY";
+        }
+      }
+    </script>
+  </body>
+</html>
